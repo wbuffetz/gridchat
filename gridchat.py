@@ -59,7 +59,9 @@ def clear_screen():
 
 def print_banner():
     # This runs the shell command and prints the banner with colors forced
-    os.system('echo "\e[38;5;196m$(toilet -f mono12 \'GRIDCHAT\' -w 100 | lolcat)\e[0m"')
+    #os.system('echo "\e[38;5;196m$(toilet -f mono12 \'GRIDCHAT\' -w 100 | lolcat)\e[0m"') ->debian
+    os.system('toilet -f mono12 "GRIDCHAT" -w 100 | lolcat')
+
 def helpfunc():
     print(f"Type /exit to leave.\n")
     print(f"Type /clear to clear screen.\n")
@@ -69,7 +71,10 @@ def main():
 
     username = authenticate_user()
 
-    os.makedirs(os.path.dirname(CHAT_FILE), exist_ok=True)
+    chat_dir = os.path.dirname(CHAT_FILE)
+    if chat_dir:
+        os.makedirs(chat_dir, exist_ok=True)
+
     if not os.path.exists(CHAT_FILE):
         open(CHAT_FILE, 'w').close()
 
