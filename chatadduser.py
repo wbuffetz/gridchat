@@ -4,10 +4,17 @@ import json
 import os
 from getpass import getpass
 
-USERS_FILE = "chat_users.json"
+# Get absolute path to this script's directory
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Store users file in the same directory as the script
+USERS_FILE = os.path.join(SCRIPT_DIR, "chat_users.json")
 
 def add_user(username, password):
-    os.makedirs(os.path.dirname(USERS_FILE), exist_ok=True)
+    dir_path = os.path.dirname(USERS_FILE)
+    if dir_path:
+        os.makedirs(dir_path, exist_ok=True)
+
     if os.path.exists(USERS_FILE):
         with open(USERS_FILE, 'r') as f:
             users = json.load(f)
@@ -21,6 +28,7 @@ def add_user(username, password):
         json.dump(users, f, indent=2)
 
     print(f"User {username} added.")
+
 
 def delete_user(username):
     if not os.path.exists(USERS_FILE):
