@@ -62,9 +62,9 @@ python3 gridchat.py #start the chat room after creating a user
 3. Start chatting!
 
 Chat Commands
-- exit – leave the chat
-- clear – clear the chat display
-- help – show help
+- /exit – leave the chat
+- /clear – clear the chat display
+- /help – show help
   
 
 ## 👮 Admin Role
