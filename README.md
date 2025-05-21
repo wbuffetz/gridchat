@@ -55,7 +55,8 @@ sudo apt install toilet lolcat  # For Debian-based systems
 
 1. Start the client
 ```bash
-python3 chat.py
+python3 chatadduser.py #add a user first
+python3 gridchat.py #start the chat room after creating a user
 ```
 2. Authenticate with your username and password
 3. Start chatting!
