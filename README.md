@@ -43,6 +43,17 @@ Choose an action: [add/delete/change_password]:
 - prompt_toolkit
 - bcrypt
 - lolcat and toilet (optional, for banner visuals)
+- cron (optional : so the messages.txt file cleans it self after a period of time you decided)
+  to use cron to automate messages clearing run this command 
+  ```bash
+  crontab -e
+  * * * * * /path/to/your/message.txt #write this on the cron
+  ```
+  Example (this clears the message.txt file every 6:30 AM)
+  ```bash
+  30 6 * * * /path/to/your/message.txt   
+  ```
+
 
 ```bash
 pip install prompt_toolkit bcrypt
