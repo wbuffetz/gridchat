@@ -71,6 +71,10 @@ def main():
 
     username = authenticate_user()
 
+    print_banner()
+    print(f"Welcome, {username}! Type /exit to leave.\n")
+    print(f"Type /help for help.\n")
+
     chat_dir = os.path.dirname(CHAT_FILE)
     if chat_dir:
         os.makedirs(chat_dir, exist_ok=True)
@@ -84,9 +88,7 @@ def main():
     updater_thread.start()
 
     session = PromptSession()
-    clear_screen()
-    print(f"Welcome, {username}! Type /exit to leave.\n")
-    print(f"Type /help for help.\n")
+    
     with patch_stdout():
         while True:
             try:
