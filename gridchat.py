@@ -79,9 +79,13 @@ def main():
     print(f"Welcome, {username}! Type /exit to leave.\n")
     print(f"Type /help for help.\n")
 
-    os.makedirs(os.path.dirname(CHAT_FILE), exist_ok=True)
+    chat_dir = os.path.dirname(CHAT_FILE)
+    if chat_dir:
+        os.makedirs(chat_dir, exist_ok=True)
+
     if not os.path.exists(CHAT_FILE):
         open(CHAT_FILE, 'w').close()
+
 
     stop_event = threading.Event()
     updater_thread = threading.Thread(target=chat_updater, args=(username, stop_event))
