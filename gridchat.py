@@ -70,15 +70,16 @@ def main():
     print_banner()
 
     username = authenticate_user()
-
     print_banner()
+
+    timestamp = time.strftime("[%H:%M:%S]")
+    with open(CHAT_FILE, 'a') as f:
+        f.write(f"{timestamp} * {username} has entered the chat room *\n")
+
     print(f"Welcome, {username}! Type /exit to leave.\n")
     print(f"Type /help for help.\n")
 
-    chat_dir = os.path.dirname(CHAT_FILE)
-    if chat_dir:
-        os.makedirs(chat_dir, exist_ok=True)
-
+    os.makedirs(os.path.dirname(CHAT_FILE), exist_ok=True)
     if not os.path.exists(CHAT_FILE):
         open(CHAT_FILE, 'w').close()
 
@@ -88,7 +89,6 @@ def main():
     updater_thread.start()
 
     session = PromptSession()
-    
     with patch_stdout():
         while True:
             try:
@@ -115,6 +115,11 @@ def main():
 
     stop_event.set()
     updater_thread.join()
+
+    timestamp = time.strftime("[%H:%M:%S]")
+    with open(CHAT_FILE, 'a') as f:
+        f.write(f"{timestamp} * {username} has left the chat room *\n")
+
     print("Goodbye.")
 
 if __name__ == "__main__":
