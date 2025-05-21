@@ -1,6 +1,7 @@
 # GRIDCHAT - Terminal Chat App with Secure User Management
 
-   <img width="567" alt="Screenshot 2025-05-21 at 11 02 26" src="https://github.com/user-attachments/assets/a6899375-cdec-431c-b93d-00d7703b363a" />
+
+<img width="578" alt="Screenshot 2025-05-21 at 18 41 47" src="https://github.com/user-attachments/assets/1eba167c-8a6f-48c6-9d00-fa11b5b9da90" />
 
 
 
