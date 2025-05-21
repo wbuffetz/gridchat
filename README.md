@@ -1,5 +1,9 @@
 # GRIDCHAT - Terminal Chat App with Secure User Management
 
+   <img width="567" alt="Screenshot 2025-05-21 at 11 02 26" src="https://github.com/user-attachments/assets/a6899375-cdec-431c-b93d-00d7703b363a" />
+
+
+
 GRIDCHAT is a simple, terminal-based chat application designed for local network use. It features real-time messaging, user authentication, and admin-controlled account management. Built using Python, it leverages file-based communication and `prompt_toolkit` for a clean and interactive CLI experience.
 
 ---
